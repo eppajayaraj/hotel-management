@@ -1,0 +1,408 @@
+from django.http import HttpResponse
+from django.shortcuts import redirect
+import mysql.connector as mysql
+from django.shortcuts import render
+
+
+def Home(req):
+    return HttpResponse("""<h2 style'color:blue'>YOU ARE GREAT CHOICE</h2>
+    <div class="main-header">
+        <div class="header">
+          <h1>HOTEL MANAGEMENT SYSTEM</h1>
+          <div>
+            <img src="https://i1.wp.com/theluxuryeditor.com/wp-content/uploads/2020/01/198589995.jpg?fit=1280%2C853&ssl=1.jpg" height="50%" width="100%">
+          </div>
+ 
+      
+      <div id="headercontent"><h2 style="text-align:center;color:brown;padding:10px;font-style:italic;">Wel-Come To Jayaraj Hotel</h2></div>
+    </div>
+      
+      <div class="container fluid dark bg-primary">
+       <div id="menu">
+        <ul>
+            
+            <a href="Home"><button class="btn">Home</button></a>
+            <a href="Reception"><button class="btn">Reception</button></a>
+            <a href="Booking"><button class="btn">Booking</button></a>
+            <a href="Gallary"><button class="btn">Gallary</button></a>
+            <a href="Login"><button class="btn">Login</button></a>
+            <a href="signout"><button class="btn">signout</button></a>
+            <a href="About.html"><button class="btn"></button></a>
+            <a href="Help"><button class="btn">Help</button></a>
+            
+        </ul>
+        </div>
+    
+        <div id="content"><h2 style="text-align:center;color:black;padding:50px;">YOU ARE GREAT CHOICE! </h2></div>
+    </div>
+      </div>  
+      <div class="Gallary">
+       <div class="img">
+            <img src="https://cache.marriott.com/marriottassets/marriott/DXBGL/dxbgl-royal-5610-hor-clsc.jpg" height="50%" width="40%">
+            <img src="https://cdn.decoist.com/wp-content/uploads/2017/06/You-do-not-need-to-go-down-the-classic-route-for-a-luxurious-dining-room.jpg" height="50%" width="40%">
+           
+   
+   </div>
+ </div>
+  """)
+def Reception(req):
+    return HttpResponse("""<h2>Reception</h2>
+        <div class="main-header">
+        <div class="header">
+          <h1>HOTEL MANAGEMENT SYSTEM</h1>
+          <div>
+          <img src="https://i1.wp.com/theluxuryeditor.com/wp-content/uploads/2020/01/198589995.jpg?fit=1280,853&ssl=1.jpg" height="50%" width="100%">
+          </div>
+ 
+      
+      <div id="headercontent"><h2 style="text-align:center;color:brown;padding:10px;font-style:italic;">Wel-Come To Jayaraj Hotel</h2></div>
+    </div>
+      
+   <div class="container fluid dark bg-primary">
+   
+   <div id="menu">
+        <ul>
+            
+            <a href="Home"><button class="btn">Home</button></a>
+            <a href="Reception"><button class="btn">Reception</button></a>
+            <a href="Booking"><button class="btn">Booking</button></a>
+            <a href="Gallary"><button class="btn">Gallary</button></a>
+            <a href="Login"><button class="btn">Login</button></a>
+            <a href="signout"><button class="btn">signout</button></a>
+            <a href="About"><button class="btn">About</button></a>
+            <a href="Help"><button class="btn">Help</button></a>
+            
+        </ul>
+     </div>
+  
+      
+    <div id="content">
+        <ul>
+            <button type="button" class="btn btn-warning btn">HOME</button>   <br>
+            <button type="button" class="btn btn-warning btn">ROOMS</button>   <br>
+            <button type="button" class="btn btn-warning btn">CALL US</button>  <br>
+            <button type="button" class="btn btn-warning btn">GALLARY</button> <br>
+        </ul>
+    </div>
+    </div>
+  <div class="Gallary">
+       <div class="img">
+            <img src="https://i.pinimg.com/originals/18/86/4e/18864e3d26e3d0b94533a4eb1301330f.jpg" height="50%" width="40%">
+            <img src="https://www.technicalsigns.co.uk/wp-content/uploads/2018/09/hotel-signage-How-to-Create-a-Reception-Area-to-Wow-Your-Visitors-blog-image.jpg" height="50%" width="40%">
+           
+   
+   </div>
+  </div>
+ </div>     
+                    
+     """)    
+def Booking(req):
+    return HttpResponse("""<h2>Booking</h2>
+     <div class="main-header">
+        <div class="header">
+          <h1>HOTEL MANAGEMENT SYSTEM</h1>
+          <div>
+          <img src="https://i1.wp.com/theluxuryeditor.com/wp-content/uploads/2020/01/198589995.jpg?fit=1280,853&ssl=1.jpg" height="50%" width="100%">
+          </div>
+ 
+      
+      <div id="headercontent"><h2 style="text-align:center;color:brown;padding:10px;font-style:italic;">Wel-Come To Jayaraj Hotel</h2></div>
+    </div>
+      
+      <div class="container fluid dark bg-primary">
+       <div id="menu">
+        <ul>
+            
+            <a href="Home"><button class="btn">Home</button></a>
+            <a href="Reception"><button class="btn">Reception</button></a>
+            <a href="Booking"><button class="btn">Booking</button></a>
+            <a href="Gallary"><button class="btn">Gallary</button></a>
+            <a href="Login"><button class="btn">Login</button></a>
+            <a href="signout"><button class="btn">signout</button></a>
+            <a href="About"><button class="btn">About</button></a>
+            <a href="Help"><button class="btn">Help</button></a>
+            
+        </ul>
+    </div>
+    
+   <div id="content">
+      <ul>
+       <button type="button" class="btn btn-warning btn"> BOOK NOW</button>    <br>
+       <button type="button" class="btn btn-warning btn">GUEST ROOMS</button>    <br>
+       <button type="button" class="btn btn-warning btn">POOL</button>    <br>
+       <button type="button" class="btn btn-warning btn">PARTY HALL</button>    <br>
+       <button type="button" class="btn btn-warning btn">WEDDING HALL</button>    <br>
+       <button type="button" class="btn btn-warning btn"> MEETING HALL</button>    <br>
+      </ul>
+    </div> 
+     </div>
+  <div class="Gallary">
+       <div class="img">
+            <img src="https://cache.marriott.com/marriottassets/marriott/DXBGL/dxbgl-royal-5610-hor-clsc.jpg" height="50%" width="40%">
+            <img src="https://cdn.decoist.com/wp-content/uploads/2017/06/You-do-not-need-to-go-down-the-classic-route-for-a-luxurious-dining-room.jpg" height="50%" width="40%">
+           
+   
+    </div>
+   </div>   
+  </div>
+    """)    
+def Gallary(req):
+     return HttpResponse("""<h2>Gallary</h2>
+    <div class="main-header">
+        <div class="header">
+          <h1>HOTEL MANAGEMENT SYSTEM</h1>
+          <div>
+            <img src="https://i1.wp.com/theluxuryeditor.com/wp-content/uploads/2020/01/198589995.jpg?fit=1280,853&ssl=1.jpg" height="50%" width="100%">
+          </div>
+ 
+      
+      <div id="headercontent"><h2 style="text-align:center;color:brown;padding:10px;font-style:italic;">Wel-Come To Jayaraj Hotel</h2></div>
+    </div>
+      
+      <div class="container fluid dark bg-primary">
+       <div id="menu">
+        <ul>
+            
+            <a href="Home"><button class="btn">Home</button></a>
+            <a href="Reception"><button class="btn">Reception</button></a>
+            <a href="Booking"><button class="btn">Booking</button></a>
+            <a href="Gallary"><button class="btn">Gallary</button></a>
+            <a href="Login"><button class="btn">Login</button></a>
+            <a href="signout"><button class="btn">signout</button></a>
+            <a href="About"><button class="btn">About</button></a>
+            <a href="Help"><button class="btn">Help</button></a>
+            
+        </ul>
+        </div>
+    
+        <div class="Gallary">
+       <div class="img">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/13/e6/4e/still-room-view-to-cocktail.jpg" height="100" width="100">
+            <img src="https://architizer-prod.imgix.net/media/146053801338504_WZB_Casino.jpg?q=60&auto=format,compress&cs=strip&w=1680" height="100" width="100">
+            <img src="https://i.pinimg.com/originals/ff/23/2d/ff232df4b46530e26353f0e2348fadd1.jpg" height="100" width="100">
+            <img src="https://yt3.ggpht.com/a/AATXAJwxN7xZtc05NPbXVe-RITvILOflkKkNNqPYYA=s900-c-k-c0xffffffff-no-rj-mo" height="100" width="100">
+            <img src="https://senecaalleganycasino.com/media/msxlriot/sac-c4-thunder-mountain-food-02.jpg" height="100" width="100">
+      </div>  
+      <div class="Gallary">
+       <div class="img">
+            <img src="https://cache.marriott.com/marriottassets/marriott/DXBGL/dxbgl-royal-5610-hor-clsc.jpg" height="50%" width="40%">
+            <img src="https://cdn.decoist.com/wp-content/uploads/2017/06/You-do-not-need-to-go-down-the-classic-route-for-a-luxurious-dining-room.jpg" height="50%" width="40%">
+           
+   
+   </div>
+ </div>
+ </div>
+ </div>
+    """)   
+
+def Login(req):
+	return HttpResponse("""<center><h2>Login Page!</h2>
+    	<div>    
+     <img src="https://i1.wp.com/theluxuryeditor.com/wp-content/uploads/2020/01/198589995.jpg?fit=1280,853&ssl=1.jpg" height="50%" width="100%">
+          </div>
+	<form action="/logintask">
+	<table>
+		<tr>
+			<td>User:</td>
+			<td><input type="email" name="Email"> </td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="Pass"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" value="Login"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><a href="/register">NewUser!</a></td>
+		</tr>
+	</table>	
+	</form> 
+        </center>
+""")
+
+
+def register(req):
+	return HttpResponse("""<center><h2>Register Page!</h2>
+	<form action="/insert">
+	<table>
+		<tr>
+			<td>Name:</td>
+			<td><input type="text" name="Name" </td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type="email" name="Email"></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="Pass"></td>
+		</tr>
+		<tr>
+			<td>Enter MoNo:</td>
+			<td><input type="number" name="Mob"></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td><input type="submit" value="Registerme!"></td>
+		</tr>		
+	</table>	
+	</form>
+	</center>
+	""")
+
+
+def signout(req):
+    return HttpResponse("""<h2>signout<\h2>
+     <div class="main-header">
+        <div class="header">
+          <h1>HOTEL MANAGEMENT SYSTEM</h1>
+          <div>
+            <img src="https://i1.wp.com/theluxuryeditor.com/wp-content/uploads/2020/01/198589995.jpg?fit=1280,853&ssl=1.jpg" height="50%" width="100%">
+          </div>
+ 
+      
+      <div id="headercontent"><h2 style="text-align:center;color:brown;padding:10px;font-style:italic;">Wel-Come To Jayaraj Hotel</h2></div>
+    </div>
+      
+      <div class="container fluid dark bg-primary">
+       <div id="menu">
+        <ul>
+            
+            <a href="Home"><button class="btn">Home</button></a>
+            <a href="Reception"><button class="btn">Reception</button></a>
+            <a href="Booking"><button class="btn">Booking</button></a>
+            <a href="Gallary"><button class="btn">Gallary</button></a>
+            <a href="Login"><button class="btn">Login</button></a>
+            <a href="signout"><button class="btn">signout</button></a>
+            <a href="About"><button class="btn">About</button></a>
+            <a href="Help"><button class="btn">Help</button></a>
+            
+        </ul>
+        </div><from action="">
+<table>
+  <tr>
+    <td>name:</td>
+    <td><input type="text" name="Name"></td>
+   </tr>
+   <tr>
+       <td>Email:</td>
+       <td><input type="Email" name="Email"></td>
+    </tr>
+    <tr>
+        <td>password:</td>
+        <td><input type="password" name="pass"></td>
+    </tr>
+    <tr>
+      <td>mobile NO:</td>
+      <td><input type="number" name="mob"></td>       
+    </tr>
+    
+    <tr>
+      <td></td>
+      <td><input type="submit" value="registerme"></td>         
+    </tr>
+</table>
+</from>
+      </div>  
+      <div class="Gallary">
+       <div class="img">
+            <img src="https://cache.marriott.com/marriottassets/marriott/DXBGL/dxbgl-royal-5610-hor-clsc.jpg" height="50%" width="40%">
+            <img src="https://cdn.decoist.com/wp-content/uploads/2017/06/You-do-not-need-to-go-down-the-classic-route-for-a-luxurious-dining-room.jpg" height="50%" width="40%">
+           
+   
+   </div>
+ </div>
+ </div>
+ """) 
+def About(req):
+    return HttpResponse("""<h2>About</h2>
+           <div class="main-header">
+        <div class="header">
+          <h1>HOTEL MANAGEMENT SYSTEM</h1>
+          <div>
+            <img src="https://i1.wp.com/theluxuryeditor.com/wp-content/uploads/2020/01/198589995.jpg?fit=1280,853&ssl=1.jpg" height="50%" width="100%">
+          </div>
+ 
+      
+      <div id="headercontent"><h2 style="text-align:center;color:brown;padding:10px;font-style:italic;">Wel-Come To Jayaraj Hotel</h2></div>
+    </div>
+      
+      <div class="container fluid dark bg-primary">
+       <div id="menu">
+        <ul>
+            
+            <a href="index"><button class="btn">Home</button></a>
+            <a href="Reception"><button class="btn">Reception</button></a>
+            <a href="Booking"><button class="btn">Booking</button></a>
+            <a href="Gallary"><button class="btn">Gallary</button></a>
+            <a href="Login"><button class="btn">Login</button></a>
+            <a href="signout"><button class="btn">signout</button></a>
+            <a href="About"><button class="btn">About</button></a>
+            <a href="Help"><button class="btn">Help</button></a>
+            
+        </ul>
+        </div>
+        <h1>Email:jayarajhotel@gmail.com</h1>
+        <h2>call:12345755</h2>
+        <h3>we are here for 24/7 at your service</h3>
+    
+        </DIV>
+      </div>  
+      <div class="Gallary">
+       <div class="img">
+            <img src="https://cache.marriott.com/marriottassets/marriott/DXBGL/dxbgl-royal-5610-hor-clsc.jpg" height="50%" width="40%">
+            <img src="https://cdn.decoist.com/wp-content/uploads/2017/06/You-do-not-need-to-go-down-the-classic-route-for-a-luxurious-dining-room.jpg" height="50%" width="40%">
+           
+   
+   </div>
+ </div>
+                   
+    """)
+def Help(req):
+    return HttpResponse("""<h2>HELP</h2>
+ 
+     <div class="main-header">
+        <div class="header">
+          <h1>HOTEL MANAGEMENT SYSTEM</h1>
+          <div>
+            <img src="https://i1.wp.com/theluxuryeditor.com/wp-content/uploads/2020/01/198589995.jpg?fit=1280,853&ssl=1.jpg" height="50%" width="100%">
+          </div>
+ 
+      
+      <div id="headercontent"><h2 style="text-align:center;color:brown;padding:10px;font-style:italic;">Wel-Come To Jayaraj Hotel</h2></div>
+    </div>
+      
+      <div class="container fluid dark bg-primary">
+       <div id="menu">
+        <ul>
+            
+            <a href="Home"><button class="btn">Home</button></a>
+            <a href="Reception"><button class="btn">Reception</button></a>
+            <a href="Booking"><button class="btn">Booking</button></a>
+            <a href="Gallary"><button class="btn">Gallary</button></a>
+            <a href="Login"><button class="btn">Login</button></a>
+            <a href="signout"><button class="btn">signout</button></a>
+            <a href="About"><button class="btn">About</button></a>
+            <a href="Help"><button class="btn">Help</button></a>
+            
+        </ul>
+        </div>
+    
+        <div id="content"><h2 style="text-align:center;color:black;padding:50px;">How can we help you! </h2></div>
+    </div>
+      </div>  
+      <div class="Gallary">
+       <div class="img">
+            <img src="https://cache.marriott.com/marriottassets/marriott/DXBGL/dxbgl-royal-5610-hor-clsc.jpg" height="50%" width="40%">
+            <img src="https://cdn.decoist.com/wp-content/uploads/2017/06/You-do-not-need-to-go-down-the-classic-route-for-a-luxurious-dining-room.jpg" height="50%" width="40%">
+           
+   
+   </div>
+ </div>
+ 
+ """)
+ 
